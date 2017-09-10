@@ -1,5 +1,5 @@
 <?php
 
-$app['database']->Q_DELETE($_POST['id']);
+$app['database']->QDelete($_POST['id']);
 
 header('Location: /');

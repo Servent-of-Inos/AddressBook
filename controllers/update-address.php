@@ -1,6 +1,6 @@
 <?php
 
-$app['database']->Q_UPDATE(
+$app['database']->QUpdate(
 
 	$_POST['id'], $_POST['Author'], $_POST['Title'], $_POST['Description']
 

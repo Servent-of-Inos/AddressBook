@@ -9,10 +9,9 @@ protected $dbh;
 		$this->dbh = $dbh;
 	}
 
-	public function Q_SELECT () {
+	public function QSelect () {
 
-		$sql = "SELECT * FROM `tadressbook`";
-
+		$sql = "SELECT * FROM tadressbook";
 		$sth = $this->dbh->prepare($sql);
 		$sth -> execute();
 		$statement = $sth->fetchall(PDO::FETCH_CLASS, 'AdressBook');
@@ -20,43 +19,53 @@ protected $dbh;
 
 	}
 
-	public function Q_INSERT ($Author, $Title, $Description) {
+	public function QInsert ($Author, $Title, $Description) {
 
-		$sql = "INSERT INTO `tadressbook`(`id`, `Author`, `Title`, `Description`, `CreationDate`) 
-		VALUES (NULL,'$Author','$Title','$Description',CURRENT_TIMESTAMP)";
+		$sql = "INSERT INTO tadressbook (Author, Title, Description) 
+				VALUES (:Author, :Title, :Description)";
 
 		$sth = $this->dbh->prepare($sql);
+		$sth->bindParam(':Author', $Author);
+		$sth->bindParam(':Title', $Title);
+		$sth->bindParam(':Description', $Description);
 		$sth -> execute();
 
 	}
 
-	public function Q_UPDATE ($id, $Author, $Title, $Description) {
+	public function QUpdate ($id, $Author, $Title, $Description) {
 
-		$sql = "UPDATE `tadressbook` SET `id`='$id',`Author`='$Author',`Title`='$Title',`Description`=
-		'$Description',`CreationDate`= CURRENT_TIMESTAMP WHERE `id`='$id'";
-
-		$sth = $this->dbh->prepare($sql);
-		$sth -> execute();
-	}
-
-	public function Q_DELETE ($id) {
-
-		$sql = "DELETE FROM `tadressbook` WHERE `tadressbook`.`id` = '$id'";
+		$sql = "UPDATE tadressbook SET Author=:Author, 
+				Title =:Title, 
+				Description =:Description WHERE id =:id";
 
 		$sth = $this->dbh->prepare($sql);
+		$sth->bindParam(':Author', $Author);
+		$sth->bindParam(':Title', $Title);
+		$sth->bindParam(':Description', $Description);
+		$sth->bindParam(':id', $id);
 		$sth -> execute();
 
 	}
 
+	public function QDelete ($id) {
 
-	public function Q_CREATE_TABLE() {
+		$sql = "DELETE FROM tadressbook WHERE tadressbook.id = :id";
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindParam(':id', $id);
+		$sth -> execute();
+
+	}
+
+
+	public function QCreateTable() {
 
 		$sql = "CREATE TABLE IF NOT EXISTS tadressbook (
-		id INT(11) NOT NULL AUTO_INCREMENT Primary key, 
-		Author VARCHAR(15) NOT NULL, 
-		Title VARCHAR(25) NULL, 
-		Description TEXT(25) NULL,  
-		CreationDate DATETIME NOT NULL)";
+				id INT(11) NOT NULL AUTO_INCREMENT Primary key, 
+				Author VARCHAR(15) NOT NULL, 
+				Title VARCHAR(25) NULL, 
+				Description TEXT(25) NULL,  
+				CreationDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP)";
 
 		$sth = $this->dbh->prepare($sql);
 		$sth -> execute();

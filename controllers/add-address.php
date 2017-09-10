@@ -1,6 +1,6 @@
 <?php
 
-$app['database']->Q_INSERT(
+$app['database']->QInsert(
 
 	$_POST['Author'], $_POST['Title'], $_POST['Description']
 

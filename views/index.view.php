@@ -59,7 +59,7 @@
 				<input class = "form-control" name = "Author" value ="Enter Author"></input>
 				<input class = "form-control" name = "Title" value ="Enter Title"></input>
 				<input class = "form-control" name = "Description" value ="Enter Description"></input>
-				<button class = "form-control btn btn-info" type="Submit"> Enter </button>
+				<button class = "form-control btn btn-info" type="Submit"> Add </button>
 
 			</form>
 		</div>
@@ -75,7 +75,7 @@
 				<input class = "form-control" name = "Author" value ="Enter Author"></input>
 				<input class = "form-control" name = "Title" value ="Enter Title"></input>
 				<input class = "form-control" name = "Description" value ="Enter Description"></input>
-				<button class = "form-control btn btn-info" type="Submit"> Enter </button>
+				<button class = "form-control btn btn-info" type="Submit"> Update </button>
 
 			</form>
 		</div>
@@ -88,7 +88,7 @@
 			<form method="POST" action="/delete-address">
 
 				<input class = "form-control" name = "id" value =" Enter id"></input>
-				<button class = "form-control btn btn-info" type="Submit"> Enter </button>
+				<button class = "form-control btn btn-info" type="Submit"> Delete </button>
 	
 			</form>
 
