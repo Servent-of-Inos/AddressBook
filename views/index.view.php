@@ -4,11 +4,11 @@
 
 	<div>
 		<p> 
-		<?=$line->id;?>
-		<?=$line->Author;?> 
-		<?=$line->Title;?>
-		<?=$line->Description;?> 
-		<?=$line->CreationDate;?>
+			<?=$line->id;?>
+			<?=$line->Author;?> 
+			<?=$line->Title;?>
+			<?=$line->Description;?> 
+			<?=$line->CreationDate;?>
 		</p>  
 	</div>	
 

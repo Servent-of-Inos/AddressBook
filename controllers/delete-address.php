@@ -1,9 +1,5 @@
 <?php
 
-$pdo = DB_connect::connect($config['database']);
+$app['database']->Q_DELETE($_POST['id']);
 
-$query = new query_builder($pdo);
-
-$query->Q_DELETE($_POST['id']);
-
-require 'views/delete-address.view.php';
+header('Location: /');

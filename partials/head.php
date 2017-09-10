@@ -9,11 +9,11 @@
 		</title>
 
 		<style>
-        div {
-      margin: 0; 
-      text-align: center;
-      border: 1px solid #000; 
-    } 
+        	div {
+      			margin: 0; 
+      			text-align: center;
+      			border: 1px solid #000; 
+    			} 
   		</style>
 
 	</head>

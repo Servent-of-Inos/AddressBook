@@ -1,6 +1,6 @@
 <?php 
 
-class query_builder {
+class QueryBuilder {
 
 protected $dbh;
 
@@ -52,7 +52,7 @@ protected $dbh;
 	public function Q_CREATE_TABLE() {
 
 		$sql = "CREATE TABLE IF NOT EXISTS tadressbook (
-		ID INT(11) NOT NULL Primary key, 
+		ID INT(11) NOT NULL AUTO_INCREMENT Primary key, 
 		Author VARCHAR(15) NOT NULL, 
 		Title VARCHAR(25) NULL, 
 		Description TEXT(25) NULL,  
@@ -63,11 +63,4 @@ protected $dbh;
 
 	}
 
-	public function Q_CREATE_DB() {
-
-		$sql = "CREATE DATABASE IF NOT EXISTS '$config['database']['name']'";
-		$sth = $this->dbh->prepare($sql);
-		$sth -> execute();
-
-	}
 }

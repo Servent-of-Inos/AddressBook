@@ -1,11 +1,7 @@
 <?php
 
-$pdo = DB_connect::connect($config['database']);
+$app['database']->Q_CREATE_TABLE();
 
-$query = new query_builder($pdo);
-
-$query->Q_CREATE_TABLE();
-
-$AdressLine = $query->Q_SELECT();
+$AdressLine = $app['database']->Q_SELECT();
 
 require 'views/index.view.php';

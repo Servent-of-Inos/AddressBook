@@ -1,10 +1,10 @@
 <?php
 
-class DB_connect {
+class Connection {
 
 
 
-public static function connect ($config) {
+public static function make ($config) {
 
 	try {
     		
