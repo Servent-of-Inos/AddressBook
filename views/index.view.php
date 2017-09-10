@@ -13,7 +13,7 @@
 			</tr>
 			
 			<?php foreach ($AdressLine as $line) : ?>
-				<tr >
+				<tr>
 					<th>
 						<div class ="col-xl-1">
 							<p><?=$line->id;?></p>

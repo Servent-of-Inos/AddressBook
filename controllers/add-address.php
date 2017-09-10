@@ -1,6 +1,6 @@
 <?php
 
-$app['database']->QInsert(
+App::Get('database')->QInsert(
 
 	$_POST['Author'], $_POST['Title'], $_POST['Description']
 

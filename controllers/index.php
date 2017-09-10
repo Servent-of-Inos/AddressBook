@@ -1,7 +1,7 @@
 <?php
 
-$app['database']->QCreateTable();
+App::Get('database')->QCreateTable();
 
-$AdressLine = $app['database']->QSelect();
+$AdressLine = App::Get('database')->QSelect();
 
 require 'views/index.view.php';
