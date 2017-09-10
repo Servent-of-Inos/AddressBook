@@ -1,31 +1,99 @@
 <?php require 'partials/head.php'; ?>
 
-<?php foreach ($AdressLine as $line) : ?>
+<div class = "container">
+	<div class = "row">
+		<table class="table table-bordered">
 
-	<div>
-		<p> 
-			<?=$line->id;?>
-			<?=$line->Author;?> 
-			<?=$line->Title;?>
-			<?=$line->Description;?> 
-			<?=$line->CreationDate;?>
-		</p>  
-	</div>	
+			<tr class="text-info">
+				<th>ID:</th>
+				<th>Author:</th>
+				<th>Title:</th>
+				<th>Description:</th>
+				<th>Creation Date:</th>
+			</tr>
+			
+			<?php foreach ($AdressLine as $line) : ?>
+				<tr >
+					<th>
+						<div class ="col-xl-1">
+							<p><?=$line->id;?></p>
+						</div>
+					</th>
 
-<?php endforeach; ?>
+					<th>
+						<div class ="col-xl-2">
+							<p><?=$line->Author;?></p>
+						</div>
+					</th>
 
-<h1> Add the Address: </h1>
+					<th>
+						<div class ="col-xl-2">
+							<p><?=$line->Title;?></p>
+						</div>
+					</th>
+					<th>
+						<div class ="col-xl-3">
+							<p><?=$line->Description;?></p>
+						</div>
+					</th>
+					<th>
+						<div class ="col-xl-4">
+							<span><?=$line->CreationDate;?></span>
+						</div>
+					</th>
+				</tr>
 
-<?php require 'partials/add-address.php'; ?>
+			<?php endforeach; ?>
 
-<h1> Update the Address: </h2>
+		</table>
+	</div>
+</div>	
 
-<?php require 'partials/update-address.php'; ?>
+<div class = "container">
+	<div class = "row ">
+		<div class ="col-xl-12 form-group">
+			<p class="text-center text-info">Add the Address: </p>
 
-<h1> Delete the Address: </h2>
+			<form method="POST" action="/add-address">
 
-<?php require 'partials/delete-address.php'; ?>
+				<input class = "form-control" name = "Author" value ="Enter Author"></input>
+				<input class = "form-control" name = "Title" value ="Enter Title"></input>
+				<input class = "form-control" name = "Description" value ="Enter Description"></input>
+				<button class = "form-control btn btn-info" type="Submit"> Enter </button>
+
+			</form>
+		</div>
+	</div>
 	
-</form>
+	<div class = "row">
+		<div class ="col-xl-12 form-group">
+			<p class="text-center text-info">Update the Address: </p>
+
+			<form method="POST" action="/update-address">
+
+				<input class = "form-control" name = "id" value ="Enter id"></input>
+				<input class = "form-control" name = "Author" value ="Enter Author"></input>
+				<input class = "form-control" name = "Title" value ="Enter Title"></input>
+				<input class = "form-control" name = "Description" value ="Enter Description"></input>
+				<button class = "form-control btn btn-info" type="Submit"> Enter </button>
+
+			</form>
+		</div>
+	</div>
+
+	<div class = "row">
+		<div class ="col-xl-12 form-group">
+		<p class="text-center text-info">Delete the Address: </mark></p>
+
+			<form method="POST" action="/delete-address">
+
+				<input class = "form-control" name = "id" value =" Enter id"></input>
+				<button class = "form-control btn btn-info" type="Submit"> Enter </button>
+	
+			</form>
+
+		</div>
+	</div>
+</div>
 
 <?php require 'partials/footer.php'; ?>

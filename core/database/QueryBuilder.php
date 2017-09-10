@@ -52,7 +52,7 @@ protected $dbh;
 	public function Q_CREATE_TABLE() {
 
 		$sql = "CREATE TABLE IF NOT EXISTS tadressbook (
-		ID INT(11) NOT NULL AUTO_INCREMENT Primary key, 
+		id INT(11) NOT NULL AUTO_INCREMENT Primary key, 
 		Author VARCHAR(15) NOT NULL, 
 		Title VARCHAR(25) NULL, 
 		Description TEXT(25) NULL,  
