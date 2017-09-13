@@ -56,9 +56,9 @@
 
 			<form method="POST" action="/add-address">
 
-				<input class = "form-control" name = "Author" value ="Enter Author"></input>
-				<input class = "form-control" name = "Title" value ="Enter Title"></input>
-				<input class = "form-control" name = "Description" value ="Enter Description"></input>
+				<input class = "form-control" name = "Author" placeholder ="Enter Author"></input>
+				<input class = "form-control" name = "Title" placeholder ="Enter Title"></input>
+				<input class = "form-control" name = "Description" placeholder ="Enter Description"></input>
 				<button class = "form-control btn btn-info" type="Submit"> Add </button>
 
 			</form>
@@ -71,10 +71,10 @@
 
 			<form method="POST" action="/update-address">
 
-				<input class = "form-control" name = "id" value ="Enter id"></input>
-				<input class = "form-control" name = "Author" value ="Enter Author"></input>
-				<input class = "form-control" name = "Title" value ="Enter Title"></input>
-				<input class = "form-control" name = "Description" value ="Enter Description"></input>
+				<input class = "form-control" name = "id" placeholder ="Enter id"></input>
+				<input class = "form-control" name = "Author" placeholder ="Enter Author"></input>
+				<input class = "form-control" name = "Title" placeholder ="Enter Title"></input>
+				<input class = "form-control" name = "Description" placeholder ="Enter Description"></input>
 				<button class = "form-control btn btn-info" type="Submit"> Update </button>
 
 			</form>
@@ -87,7 +87,7 @@
 
 			<form method="POST" action="/delete-address">
 
-				<input class = "form-control" name = "id" value =" Enter id"></input>
+				<input class = "form-control" name = "id" placeholder =" Enter id"></input>
 				<button class = "form-control btn btn-info" type="Submit"> Delete </button>
 	
 			</form>

@@ -1,5 +1,9 @@
 <?php 
 
+namespace Core\Database;
+
+use \PDO;
+
 class QueryBuilder {
 
 protected $dbh;
@@ -14,7 +18,7 @@ protected $dbh;
 		$sql = "SELECT * FROM tadressbook";
 		$sth = $this->dbh->prepare($sql);
 		$sth -> execute();
-		$statement = $sth->fetchall(PDO::FETCH_CLASS, 'AdressBook');
+		$statement = $sth->fetchall(PDO::FETCH_CLASS, 'Core\AddressBook');
 		return $statement;	
 
 	}

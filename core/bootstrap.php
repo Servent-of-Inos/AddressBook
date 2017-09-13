@@ -1,12 +1,8 @@
 <?php 
 
-require 'core/AdressBook.php';
-require 'core/database/connection.php';
-require 'core/database/QueryBuilder.php';
-require 'core/functions.php';
-require 'core/router.php';
-require 'core/Request.php';
-require 'core/app.php';
+use Core\App;
+use Core\Database\QueryBuilder;
+use Core\Database\Connection;
 
 App::Bind('config', require 'config.php');
 

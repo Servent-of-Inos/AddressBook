@@ -1,0 +1,10 @@
+{
+    "autoload": {
+
+        "psr-4": {
+            "Core\\": "core/",
+            "Core\\Database\\": "core/database",
+            "Controllers\\": "controllers/"
+        }
+    }
+}
